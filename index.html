@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Articles</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <select id="sortSelect">
+        <option value="created_at.desc">Po dacie malejąco</option>
+        <option value="created_at.asc">Po dacie rosnąco</option>
+        <option value="title.asc">Po nazwie alfabetycznie</option>
+      </select>
+      <div id="articles"></div>
+
+      <form id="articleForm">
+        <h2>Add New Article</h2>
+        <input type="text" id="title" placeholder="Title" required />
+        <input type="text" id="subtitle" placeholder="Subtitle" required />
+        <input type="text" id="author" placeholder="Author" required />
+        <input type="datetime-local" id="created_at" required />
+        <textarea id="content" placeholder="Content" required></textarea>
+        <button type="submit">Add Article</button>
+      </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@2.30.0/dist/date-fns.min.js"></script>
+    <script>
+      const { format } = dateFns;
+    </script>
+    <script src="app.js"></script>
+  </body>
+</html>
